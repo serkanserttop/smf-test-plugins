@@ -15,7 +15,8 @@ SMF.GoogleAnalytics = (function() {
 		//getOptOut
 		initTracker: function(trackingId, dispatchInterval, logLevel, trackUncaughtException) {
 			if(isAndroid) {
-				ga.initTracker.apply(ga, slice.call(arguments));
+				return ga.initTracker.apply(ga, slice.call(arguments));
+				// ga.initTracker(trackingId, dispatchInterval, logLevel, trackUncaughtException);
 			} else {
 				ga.dispatchInterval = dispatchInterval;
 				ga.trackUncaughtException = trackUncaughtException;
