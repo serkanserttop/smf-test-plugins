@@ -11,6 +11,15 @@ function Page1_Self_OnShow() {
 	this.statusBar.transparent = true;
 }
 function Page1_TextButton1_OnPressed(e){
+	var ga.initTracker("UA-69403535-1", 1, 0, true);
+	ga.sendScreen("page1");
+	ga.sendEvent("ui-action", "press", "Button1", 0);
+	ga.sendSocial("facebook", "share", "http://www.smartface.io");
+	ga.sendTiming("pageload", 123123433, "name", "label");
+	ga.sendInAppTransaction("TR_ID", "In-App Store", 5.25, 0.3, 0.15, "TRY");
+	ga.sendInAppItem("TR_ID", "A product", "F_123", "Level", 2.5, 4, "TRY");
+	ga.sendCampaign("email", "email_marketing", "summer_campaign", "term", "email_variation_1");
+	/*
 	tests.SMF_Facebook.checkIfInstalled();
 	tests.SMF_GoogleAnalytics.checkIfInstalled();
 	// var tracker = 
@@ -23,6 +32,7 @@ function Page1_TextButton1_OnPressed(e){
 	tests.SMF_GoogleAnalytics.sendInAppItem();
 	tests.SMF_GoogleAnalytics.sendEvent();
 	tests.SMF_GoogleAnalytics.sendCampaign();
+	*/
 	// } else {
 	// 	alert('tracker not created');
 	// }
