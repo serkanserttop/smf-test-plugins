@@ -1,11 +1,14 @@
-Pages.Page1.button = new SMF.UI.TextButton({
+Pages.Page2 = new SMF.UI.Page();
+Pages.Page2.button = new SMF.UI.TextButton({
     top: "10%",
     left: "10%",
     text: "Run Test",
     onPressed: function(e) {
         Page1_TextButton1_OnPressed();
     }
-})
+});
+Pages.Page2.add(Pages.Page2.button);
+Pages.Page2.show();
 
 function Page1_Self_OnKeyPress(e) {
 	if (e.keyCode === 4) {
