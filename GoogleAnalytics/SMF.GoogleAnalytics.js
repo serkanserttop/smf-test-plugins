@@ -15,8 +15,8 @@ SMF.GoogleAnalytics = (function() {
 		//getOptOut
 		initTracker: function(trackingId, dispatchInterval, logLevel, trackUncaughtException) {
 			if(isAndroid) {
-				return ga.initTracker.apply(ga, slice.call(arguments));
-				// ga.initTracker(trackingId, dispatchInterval, logLevel, trackUncaughtException);
+				// return ga.initTracker.apply(ga, slice.call(arguments));
+				ga.initTracker(trackingId, dispatchInterval, logLevel, trackUncaughtException);
 			} else {
 				ga.dispatchInterval = dispatchInterval;
 				ga.trackUncaughtException = trackUncaughtException;
@@ -28,7 +28,8 @@ SMF.GoogleAnalytics = (function() {
 		},
 	 	sendCampaign: function (name, source, medium, term, content) {
 	 		if(isAndroid) {
-				ga.sendCampaign.apply(ga, slice.call(arguments));
+	 			ga.sendCampaign(name, source, medium, term, content);
+				// ga.sendCampaign.apply(ga, slice.call(arguments));
 			} else {
 				var tracker = ga.defaultTracker();
 				var objects = {
@@ -43,7 +44,8 @@ SMF.GoogleAnalytics = (function() {
 	 	},
 		sendEvent: function (category, action, label, value) {
 			if(isAndroid) {
-				ga.sendEvent.apply(ga, slice.call(arguments));
+				// ga.sendEvent.apply(ga, slice.call(arguments));
+				ga.sendEvent(category, action, label, value);
 			} else {
 				var tracker = ga.defaultTracker();
 				tracker.send(GAIDictionaryBuilder.createEventWithCategoryActionLabelValue(category, action, label, value).build());
@@ -51,7 +53,8 @@ SMF.GoogleAnalytics = (function() {
 		},
 	 	sendInAppItem: function (transactionId, name, sku, category, price, quantity, currency) {
 	 		if(isAndroid) {
-				ga.sendInAppItem.apply(ga, slice.call(arguments));
+				// ga.sendInAppItem.apply(ga, slice.call(arguments));
+				ga.sendInAppItem(transactionId, name, sku, category, price, quantity, currency);
 			} else {
 				var tracker = ga.defaultTracker();
 				tracker.send(GAIDictionaryBuilder.createItemWithTransactionIdNameSkuCategoryPriceQuantityCurrencyCode(transactionId, name, sku, category, price, quantity, currency).build());
@@ -59,7 +62,8 @@ SMF.GoogleAnalytics = (function() {
 	 	},
 	 	sendInAppTransaction: function (transactionId, affiliation, revenue, tax, shipping, currency) {
 	 		if(isAndroid) {
-				ga.sendInAppTransaction.apply(ga, slice.call(arguments));
+				// ga.sendInAppTransaction.apply(ga, slice.call(arguments));
+				ga.sendInAppTransaction(transactionId, affiliation, revenue, tax, shipping, currency);
 			} else {
 				var tracker = ga.defaultTracker();
 				tracker.send(GAIDictionaryBuilder.createTransactionWithIdAffiliationRevenueTaxShippingCurrencyCode(transactionId, affiliation, revenue, tax, shipping, currency).build());
@@ -67,7 +71,8 @@ SMF.GoogleAnalytics = (function() {
 	 	},
 		sendScreen: function(screen) {
 			if(isAndroid) {
-				ga.sendScreen.apply(ga, slice.call(arguments));
+				// ga.sendScreen.apply(ga, slice.call(arguments));
+				ga.sendScreen(screen);
 			} else {
 				var tracker = ga.defaultTracker();
 				var key = GAITrackerHelper.getKey('ScreenName');
@@ -77,7 +82,8 @@ SMF.GoogleAnalytics = (function() {
 		},
 		sendSocial: function(network, action, target) {
 			if(isAndroid) {
-				ga.sendSocial.apply(ga, slice.call(arguments));
+				// ga.sendSocial.apply(ga, slice.call(arguments));
+				ga.sendSocial(network, action, target);
 			} else {
 				var tracker = ga.defaultTracker();
 				tracker.send(GAIDictionaryBuilder.createSocialWithNetworkActionTarget(network, action, target).build());
@@ -85,7 +91,8 @@ SMF.GoogleAnalytics = (function() {
 	 	},
 	 	sendTiming: function(category, value, name, label) {
 	 		if(isAndroid) {
-				ga.sendTiming.apply(ga, slice.call(arguments));
+				// ga.sendTiming.apply(ga, slice.call(arguments));
+				ga.sendTiming(category, value, name, label);
 			} else {
 				var tracker = ga.defaultTracker();
 				tracker.send(GAIDictionaryBuilder.createTimingWithCategoryIntervalNameLabel(category, value, name, label).build());
