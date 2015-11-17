@@ -13,18 +13,19 @@ function Page1_Self_OnShow() {
 function Page1_TextButton1_OnPressed(e){
 	tests.SMF_Facebook.checkIfInstalled();
 	tests.SMF_GoogleAnalytics.checkIfInstalled();
-	var tracker = tests.SMF_GoogleAnalytics.initTracker();
-	if(tracker) {
-		tests.SMF_GoogleAnalytics.sendTiming();
-		tests.SMF_GoogleAnalytics.sendSocial();
-		tests.SMF_GoogleAnalytics.sendScreen();
-		tests.SMF_GoogleAnalytics.sendInAppTransaction();
-		tests.SMF_GoogleAnalytics.sendInAppItem();
-		tests.SMF_GoogleAnalytics.sendEvent();
-		tests.SMF_GoogleAnalytics.sendCampaign();
-	} else {
-		alert('tracker not created');
-	}
+	// var tracker = 
+	tests.SMF_GoogleAnalytics.initTracker();
+	// if(tracker) {
+	tests.SMF_GoogleAnalytics.sendTiming();
+	tests.SMF_GoogleAnalytics.sendSocial();
+	tests.SMF_GoogleAnalytics.sendScreen();
+	tests.SMF_GoogleAnalytics.sendInAppTransaction();
+	tests.SMF_GoogleAnalytics.sendInAppItem();
+	tests.SMF_GoogleAnalytics.sendEvent();
+	tests.SMF_GoogleAnalytics.sendCampaign();
+	// } else {
+	// 	alert('tracker not created');
+	// }
 	/*
 	// Facebook instance
 	var fb = new FBClass();
