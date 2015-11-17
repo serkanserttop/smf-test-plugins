@@ -12,7 +12,7 @@ function Page1_Self_OnShow() {
 }
 function Page1_TextButton1_OnPressed(e){
 	var ga = new SMFGoogleAnalytics("Landroid/content/Context;");
-	ga.initTracker("UA-69403535-1", 1, 0, true);
+	ga.initTracker(APP_GLOBALS.GA_TRACKING_ID, 1, 0, true);
 	ga.sendScreen("page1");
 	ga.sendEvent("ui-action", "press", "Button1", 0);
 	ga.sendSocial("facebook", "share", "http://www.smartface.io");
