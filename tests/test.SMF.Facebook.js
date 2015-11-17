@@ -9,12 +9,12 @@ tests.SMF_Facebook = {
             fb = new FBClass();
         }
     } catch(e) {
-        isError = true;
-        alert('Facebook plugin does not work');
+			isError = true;
+			alert('Facebook plugin does not work');
     }
     if(!isError) {
-        alert('Facebook plugin works');
-    }
+			alert('Facebook plugin works');
+		}
 	},
 	runNativeInterfaceTestsOnAndroid: function() {
 		var fb = new SMFFacebook("Landroid/app/Activity;");

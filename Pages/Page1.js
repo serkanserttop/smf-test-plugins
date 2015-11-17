@@ -1,3 +1,12 @@
+Pages.Page1.button = new SMF.UI.TextButton({
+    top: "10%",
+    left: "10%",
+    text: "Run Test",
+    onPressed: function(e) {
+        Page1_TextButton1_OnPressed();
+    }
+})
+
 function Page1_Self_OnKeyPress(e) {
 	if (e.keyCode === 4) {
 		Application.exit();
