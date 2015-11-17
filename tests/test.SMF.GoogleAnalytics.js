@@ -16,6 +16,17 @@ tests.SMF_GoogleAnalytics = {
 			alert('Google Analytics plugin works');
 		}
 	},
+	runNativeInterfaceTestsOnAndroid: function() {
+		var ga = new SMFGoogleAnalytics("Landroid/content/Context;");
+		ga.initTracker(APP_GLOBALS.GA_TRACKING_ID, 1, 0, true);
+		ga.sendScreen("page1");
+		ga.sendEvent("ui-action", "press", "Button1", 0);
+		ga.sendSocial("facebook", "share", "http://www.smartface.io");
+		ga.sendTiming("pageload", 123123433, "name", "label");
+		ga.sendInAppTransaction("TR_ID", "In-App Store", 5.25, 0.3, 0.15, "TRY");
+		ga.sendInAppItem("TR_ID", "A product", "F_123", "Level", 2.5, 4, "TRY");
+		ga.sendCampaign("email", "email_marketing", "summer_campaign", "term", "email_variation_1");
+	},
 	initTracker: function(){
 		var dispatchInterval = 1;
 		var logLevel = 0;
