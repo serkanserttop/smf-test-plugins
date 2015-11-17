@@ -1,4 +1,5 @@
 var APP_GLOBALS = {
+	"GA_TRACKING_ID": "UA-70242949-1",
 	"BASE_URL": "https://raw.githubusercontent.com/serkanserttop/smf-test-plugins/master/"
 };
 
