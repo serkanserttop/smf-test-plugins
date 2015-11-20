@@ -1,16 +1,12 @@
-SMF.GoogleAnalytics = (function() {
-	var slice = Array.prototype.slice;
+SMF_GA_SCB = (function() {
 	var isAndroid = (Device.deviceOS === "Android") ? true : false;
-	var fn = (isAndroid) ? SMFGoogleAnalytics : GAI;
-	var ga;
-	if(isAndroid) {
-		ga = new SMFGoogleAnalytics("Landroid/content/Context;");
-	} else {
-		ga = GAI.sharedInstance();
-	}
+	var ga = (isAndroid) ? new SMFGoogleAnalytics("Landroid/content/Context;") : GAI.sharedInstance();
 	return {
 		dispatch: function(){
 			ga.dispatch();
+		},
+		sharedInstance: function(){
+			return ga;
 		},
 		//getOptOut
 		initTracker: function(trackingId, dispatchInterval, logLevel, trackUncaughtException) {
@@ -33,13 +29,13 @@ SMF.GoogleAnalytics = (function() {
 			} else {
 				var tracker = ga.defaultTracker();
 				var objects = {
-    		"utm_campaign": name,
-        "utm_source" : source,
-        "utm_medium"   : medium,
-        "utm_term"   : term,
-        "utm_content"  : content
-    	};
-    	tracker.send(GAIDictionaryBuilder.createAppView().setAll(objects).build());
+	    		"utm_campaign": name,
+	        "utm_source" : source,
+	        "utm_medium"   : medium,
+	        "utm_term"   : term,
+	        "utm_content"  : content
+    		};
+    		tracker.send(GAIDictionaryBuilder.createAppView().setAll(objects).build());
 			}
 	 	},
 		sendEvent: function (category, action, label, value) {

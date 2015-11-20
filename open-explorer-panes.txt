@@ -1,0 +1,6 @@
+C:\Users\serkanserttop\Documents\Smartface\Published Projects\Smartface Demo\Android
+\\psf\Home\Documents\Smartface\Published Projects\Smartface Demo
+\\psf\Home\Desktop\fb_android_serkan\fb_data
+C:\Program Files (x86)\Smartface\Smartface App Studio 4.5
+
+C:\Program Files (x86)\Java\jdk1.7.0_71\bin\keytool.exe -exportcert -alias androiddebugkey -keystore C:\Users\serkanserttop\.android\debug.keystore | openssl sha1 -binary | openssl base64

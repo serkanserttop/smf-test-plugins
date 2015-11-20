@@ -41,19 +41,12 @@ SMF.Facebook = function() {
 }
 
 if (Device.deviceOS === "IDE") {
-	function SMFFacebook(activity) {};
-
-	SMFFacebook.prototype.openSession = function openSession(permissions, onSuccess, onError) {};
-
-	SMFFacebook.prototype.userDetails = function userDetails(onSuccess, onError) {};
-
-	SMFFacebook.prototype.getFriendsList = function getFriendsList(onSuccess, onError) {};
-
-	SMFFacebook.prototype.postStatusUpdate = function postStatusUpdate(message, onSuccess, onError) {};
-
-	SMFFacebook.prototype.showFriendsPicker = function showFriendsPicker(multiSelection, onSuccess, onCancel, onError) {};
-
-	SMFFacebook.prototype.closeSession = function closeSession() {};
-
-	SMFFacebook.prototype.isSessionActive = function isSessionActive() {};
+	// function SMFFacebook(activity) {};
+	// SMFFacebook.prototype.openSession = function openSession(permissions, onSuccess, onError) {};
+	// SMFFacebook.prototype.userDetails = function userDetails(onSuccess, onError) {};
+	// SMFFacebook.prototype.getFriendsList = function getFriendsList(onSuccess, onError) {};
+	// SMFFacebook.prototype.postStatusUpdate = function postStatusUpdate(message, onSuccess, onError) {};
+	// SMFFacebook.prototype.showFriendsPicker = function showFriendsPicker(multiSelection, onSuccess, onCancel, onError) {};
+	// SMFFacebook.prototype.closeSession = function closeSession() {};
+	// SMFFacebook.prototype.isSessionActive = function isSessionActive() {};
 }
